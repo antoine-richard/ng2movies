@@ -1,11 +1,11 @@
 {
     "compilerOptions": {
         "emitDecoratorMetadata": true,
-        "module": "amd",
+        "module": "commonjs",
         "target": "es5"
     },
     "files": [
         "todo.ts",
-        "typings/tsd.d.ts"
+        "typings/angular2/angular2.d.ts"
     ]
 }
