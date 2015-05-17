@@ -1,0 +1,21 @@
+<section>
+
+  <h1>Movies</h1>
+
+  <ul>
+
+    <li *for="#movie of movies">
+
+        <input type="checkbox" (click)="favorite(movie)" [checked]="movie.favorite">
+        <label>{{movie.title}} {{movie.favorite}}</label>
+
+    </li>
+    
+  </ul>
+
+  <div>
+    <input id="favorite-all" type="checkbox" (click)="favoriteAll($event)">
+    <label for="favorite-all">Mark all as favorite</label>
+  </div>
+
+</section>
