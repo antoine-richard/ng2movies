@@ -1,11 +1,11 @@
-import {bootstrap, Component, View, For} from 'angular2/angular2';
+import {bootstrap, Component, View, NgFor} from 'angular2/angular2';
 
 @Component({
   selector: 'movies-app'
 })
 @View({
   templateUrl: 'movies.html',
-  directives: [For]
+  directives: [NgFor]
 })
 class MovieApp {
 

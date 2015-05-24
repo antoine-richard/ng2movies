@@ -4,7 +4,7 @@
 
   <ul>
 
-    <li *for="#movie of movies">
+    <li *ng-for="#movie of movies">
 
         <input type="checkbox" (click)="favorite(movie)" [checked]="movie.favorite">
         <label>{{movie.title}} {{movie.favorite}}</label>
