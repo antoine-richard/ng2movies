@@ -1,7 +1,9 @@
 import {bootstrap, Component, View, NgFor} from 'angular2/angular2';
+import {Movie, MoviesService} from 'moviesService'
 
 @Component({
-  selector: 'movies-app'
+  selector: 'movies-app',
+  appInjector: [MoviesService]
 })
 @View({
   templateUrl: 'movies.html',
@@ -9,23 +11,23 @@ import {bootstrap, Component, View, NgFor} from 'angular2/angular2';
 })
 class MovieApp {
 
-  movies: any;
+  movies:Array<Movie>;
 
-  constructor() {
-    this.movies = [
-      {title: "un"},
-      {title: "deux"},
-      {title: "trois"},
-      {title: "quatre"}
-    ]
+  constructor(movies: MoviesService) {
+      this.movies = movies.getList();
   }
   
+  add(title) {
+    this.movies.push({title: title.value});
+    title.value = "";
+  }
+
   favorite(movie) {
     movie.favorite = !movie.favorite;
   }
 
   favoriteAll($event) {
-    var favorite = $event.target.checked;
+    let favorite = $event.target.checked;
     this.movies.forEach((movie)=> {
       movie.favorite = favorite;
     });

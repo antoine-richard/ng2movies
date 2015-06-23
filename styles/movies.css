@@ -1,14 +1,28 @@
 .container {
-  width: 800px;
+  width: 480px;
   margin: 0 auto;
+  font-size: 1.4em;
 }
-
-
 
 ul {
   padding: 0;
+  border-top: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  margin: 1em 0 2em;
 }
 
 li {
   list-style-type: none;
+  line-height: 2em;
+  height: 2em;
+  border-bottom: 1px solid gray;
+}
+
+li input[type="checkbox"] {
+  margin: 0 0.5em 0 1em;
+}
+
+.favorite-all, .add {
+  margin: 1.5em 0;
 }

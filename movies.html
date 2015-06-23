@@ -3,17 +3,21 @@
   <h1>Movies</h1>
 
   <ul>
-
     <li *ng-for="#movie of movies">
 
         <input type="checkbox" (click)="favorite(movie)" [checked]="movie.favorite">
-        <label>{{movie.title}} {{movie.favorite}}</label>
+        <label>{{movie.title}}</label>
 
     </li>
-
   </ul>
 
-  <div>
+  <div class="add">
+    <label>New movie: </label>
+    <input type="text" #title>
+    <button (click)="add(title)">Add</button>
+  </div>
+
+  <div class="favorite-all">
     <input id="favorite-all" type="checkbox" (click)="favoriteAll($event)">
     <label for="favorite-all">Mark all as favorite</label>
   </div>
